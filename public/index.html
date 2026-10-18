@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffc107">
+  <title>Krish Travels | Passenger Care</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">K</span><span><b>KRISH <em>TRAVELS</em></b><small>Every journey matters.</small></span></a>
+  <nav><a href="#feedback">Passenger feedback</a><a href="#staff-login">Staff portal</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy"><span class="eyebrow">PASSENGER CARE • ALWAYS LISTENING</span><h1>Your journey.<br><span>Your voice.</span></h1><p>Help us make every Krish Travels trip safer, smoother and better. Share a concern or tell us what went well.</p><div class="trust-row"><span>✓ Private feedback</span><span>✓ Trackable ticket ID</span><span>✓ Real support team</span></div></div>
+    <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="road"></div><div class="bus"><div class="bus-window"></div><div class="bus-window second"></div><div class="bus-wheel one"></div><div class="bus-wheel two"></div><span>KRISH</span></div><div class="art-caption">WE'RE HERE FOR YOU <b>24/7</b></div></div>
+  </section>
+  <section class="content-grid" id="feedback">
+    <div class="panel form-panel">
+      <div class="section-head"><div><span class="eyebrow">PASSENGER FORM</span><h2>Share your feedback</h2><p>Fields marked * are required.</p></div><span class="head-icon">✦</span></div>
+      <form id="feedback-form">
+        <div class="field-grid"><label>Passenger name *<input name="name" required maxlength="100" placeholder="Your full name"></label><label>Phone number<input name="phone" maxlength="30" placeholder="For a follow-up"></label><label>Email address<input name="email" type="email" maxlength="120" placeholder="you@example.com"></label><label>Bus number / route<input name="busNumber" maxlength="40" placeholder="e.g. TN 38 AB 1234"></label><label>Travel date<input name="travelDate" type="date"></label><label>What is this about? *<select name="category" required><option value="">Select a category</option><option>Bus delay</option><option>Staff behaviour</option><option>Booking / ticket</option><option>Bus condition</option><option>Boarding / seat</option><option>Payment / refund</option><option>Tracking / app</option><option>Other</option></select></label></div>
+        <label>Subject<input name="subject" maxlength="140" placeholder="Short summary (optional)"></label>
+        <label>Tell us more *<textarea name="message" required minlength="5" maxlength="2500" rows="5" placeholder="Please describe what happened and how we can help..."></textarea></label>
+        <div class="rating-row"><span>Rate your experience</span><div class="stars" role="radiogroup" aria-label="Rating"><button type="button" data-rating="1" aria-label="1 star">★</button><button type="button" data-rating="2" aria-label="2 stars">★</button><button type="button" data-rating="3" aria-label="3 stars">★</button><button type="button" data-rating="4" aria-label="4 stars">★</button><button type="button" data-rating="5" aria-label="5 stars">★</button></div><input type="hidden" name="rating" value="0"></div>
+        <button class="btn primary full" type="submit">Send feedback <span>↗</span></button><p class="privacy-note">Your details are used only to review and respond to this feedback.</p>
+      </form><div id="feedback-result" class="result hidden" role="status"></div>
+    </div>
+    <aside class="side-column">
+      <div class="side-card dark-card"><span class="eyebrow">THE KRISH PROMISE</span><h3>Every complaint deserves an answer.</h3><p>Our support team reviews feedback, follows up and works toward a clear resolution.</p><div class="promise-line"><span>01</span> We listen carefully</div><div class="promise-line"><span>02</span> We take ownership</div><div class="promise-line"><span>03</span> We improve the journey</div></div>
+      <div class="side-card help-card"><div class="help-icon">?</div><h3>Already contacted us?</h3><p>Keep your ticket ID after submitting. Share it with our support team if you need to follow up.</p><a href="#staff-login">Staff sign in <span>→</span></a></div>
+    </aside>
+  </section>
+  <section class="staff-login-wrap" id="staff-login"><div class="login-intro"><span class="eyebrow">INTERNAL ACCESS</span><h2>Support team workspace</h2><p>Authorised customer-support staff and administrators only.</p></div><form id="login-form" class="login-form"><label>Account type<select name="role" required><option value="staff">Staff login</option><option value="admin">Admin login</option></select></label><label>Username<input name="username" autocomplete="username" required placeholder="Username"></label><label>Password<input name="password" type="password" autocomplete="current-password" required placeholder="Your password"></label><button class="btn dark-btn full">Sign in securely <span>→</span></button><div id="login-error" class="error-text"></div></form></section>
+</main>
+<footer><div class="brand footer-brand"><span class="brand-mark">K</span><span><b>KRISH <em>TRAVELS</em></b><small>Every journey matters.</small></span></div><span>Passenger Care Portal <i>•</i> Built for better journeys</span></footer>
+<script src="/branding.js"></script><script src="/app.js"></script>
+</body></html>
