@@ -6,14 +6,12 @@ const cookieParser = require('cookie-parser');
 const crypto = require('crypto');
 const { MongoClient } = require('mongodb');
 
-
 const app = express();
-const PORT = Number(process.env.PORT || 10000);
+const PORT = Number(process.env.PORT || 3000);
 const SECRET = process.env.JWT_SECRET;
-const MONGO_URI = process.env.MONGODB_URI;
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/';
 const DB_NAME = process.env.MONGODB_DB || 'krish_travels_feedback';
 let db, users, complaints, auditLogs;
-
 
 app.disable('x-powered-by');
 app.use(express.json({ limit: '100kb' }));
@@ -205,13 +203,7 @@ async function main(){
     if(!password||password.length<10)throw new Error('Set ADMIN_PASSWORD (at least 10 characters) in .env before first run.');
     await users.insertOne({id:crypto.randomUUID(),username,name:'Krish Travels Admin',passwordHash:await bcrypt.hash(password,12),role:'admin',active:true,createdAt:new Date().toISOString(),mustChangePassword:true});
     await audit('system','Admin account initialized',username);console.log('Initial admin account created; change password after login.');
-
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Krish Travels portal running on port ${PORT}`);
-  });
+  }
+  app.listen(PORT,()=>console.log(`Krish Travels portal running at http://localhost:${PORT}; MongoDB database: ${DB_NAME}`));
 }
-
-main().catch(e => {
-  console.error('Startup failed:', e.message);
-  process.exit(1);
-});
+main().catch(e=>{console.error('Startup failed:',e.message);process.exit(1);});
